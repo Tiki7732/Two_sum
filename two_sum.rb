@@ -28,6 +28,16 @@ end
 # O(nlogn) time
 # O(n) space
 
+def two_sum?(array, target_sum)
+    matches = {}
+    array.each do |num|
+        return true if matches.has_key?(target_sum - num)
+        matches[num] = 1
+    end
+    false
+end
+# O(n) time
+# O(n) space
 
 arr = [0, 1, 5, 7]
 p bad_two_sum?(arr, 6) 
@@ -35,3 +45,6 @@ p bad_two_sum?(arr, 10)
 
 p okay_two_sum(arr, 6)
 p okay_two_sum(arr, 10)
+
+p two_sum?(arr, 6)
+p two_sum?(arr, 10)
